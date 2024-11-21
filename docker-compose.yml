@@ -1,0 +1,18 @@
+version: '3.5'
+name: "productive"
+services:
+  db:
+    image: "postgres"
+    restart: always
+    container_name: productive_db
+    environment:
+      POSTGRES_USER: "postgres"
+      POSTGRES_DB: "productive4real"
+      POSTGRES_PASSWORD: ducdev4real
+    volumes:
+      - database-data:/var/lib/postgresql-data
+    ports:
+      - 8010:5432
+
+volumes:
+  database-data:
